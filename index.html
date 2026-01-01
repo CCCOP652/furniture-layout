@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家具板件排版工具 - 免费简易版</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 家具板件自动排版工具</h1>
+        <p class="desc">输入板材和零件尺寸，一键生成排版图（适合木工/家具厂使用）</p>
+
+        <!-- 板材尺寸输入 -->
+        <div class="input-section">
+            <h2>1. 输入板材尺寸 (单位：mm)</h2>
+            <div class="input-row">
+                <label>宽度: <input type="number" id="boardWidth" value="2440" min="100"></label>
+                <label>高度: <input type="number" id="boardHeight" value="1220" min="100"></label>
+            </div>
+        </div>
+
+        <!-- 零件列表输入 -->
+        <div class="input-section">
+            <h2>2. 输入零件尺寸 (可添加多个)</h2>
+            <div id="partsContainer">
+                <div class="part-row">
+                    <label>宽度: <input type="number" class="partWidth" value="500" min="10"></label>
+                    <label>高度: <input type="number" class="partHeight" value="300" min="10"></label>
+                    <label>数量: <input type="number" class="partQuantity" value="10" min="1"></label>
+                </div>
+            </div>
+            <button type="button" id="addPartBtn">+ 添加新零件</button>
+        </div>
+
+        <!-- 操作按钮 -->
+        <div class="action-section">
+            <button id="calculateBtn">✨ 计算排版</button>
+            <button id="resetBtn">🔄 重置数据</button>
+        </div>
+
+        <!-- 结果显示 -->
+        <div class="result-section">
+            <h2>3. 排版结果</h2>
+            <div id="resultText">点击"计算排版"生成结果...</div>
+            <canvas id="canvas" width="800" height="500"></canvas>
+            <div class="export-section">
+                <button id="exportBtn">📤 导出为图片</button>
+                <p class="note">提示：右键图片可保存到电脑</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2023 简易家具排版工具 | 无编程基础友好版 | <a href="https://github.com" target="_blank">GitHub开源</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
